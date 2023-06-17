@@ -1,2 +1,2 @@
 # sytnik.github.io
-My business card site
+My CV project hosted via GitHib Pages
