@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" (click)="goToPage('')"
+       [class.active]="activePage === '/'">
+      <i class="fal fa-stream me-2"></i>Summary
+    </a>
+    <button class="navbar-toggler"
+            type="button"
+            (click)="toggleNavbar()"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div [class.collapse]="!isOpen"
+         class="collapse navbar-collapse"
+         id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" (click)="goToPage('experience')"
+             [class.active]="activePage === '/experience'">
+            <i class="fal fa-business-time me-2"></i>Experience
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="goToPage('technical')"
+             [class.active]="activePage === '/technical'">
+            <i class="fal fa-code me-2"></i>Hard skills
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="goToPage('soft')"
+             [class.active]="activePage === '/soft'">
+            <i class="fal fa-users me-2"></i>Soft skills
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="goToPage('certifications')"
+             [class.active]="activePage === '/certifications'">
+            <i class="fal fa-file-certificate me-2"></i>Certifications</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
