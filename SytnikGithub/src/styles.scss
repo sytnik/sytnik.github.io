@@ -28,7 +28,7 @@
 //@import "bootstrap/scss/alert";
 //@import "bootstrap/scss/progress";
 //@import "bootstrap/scss/list-group";
-@import "bootstrap/scss/close";
+//@import "bootstrap/scss/close";
 //@import "bootstrap/scss/toasts";
 //@import "bootstrap/scss/modal";
 //@import "bootstrap/scss/tooltip";
@@ -36,9 +36,12 @@
 //@import "bootstrap/scss/carousel";
 //@import "bootstrap/scss/spinners";
 //@import "bootstrap/scss/offcanvas";
-@import "bootstrap/scss/placeholders";
+//@import "bootstrap/scss/placeholders";
 @import "bootstrap/scss/helpers";
 @import "bootstrap/scss/utilities/api";
+@import "fontawesome/fontawesome";
+@import "fontawesome/light";
+@import "fontawesome/brands";
 
 $color-start: #a8c0ff;
 $color-end: #3f2b96;

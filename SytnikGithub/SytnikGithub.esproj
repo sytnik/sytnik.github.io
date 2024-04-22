@@ -5,4 +5,7 @@
     <ShouldRunBuildScript>false</ShouldRunBuildScript>
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist\SytnikGithub\</BuildOutputFolder>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\fontawesome\" />
+  </ItemGroup>
 </Project>

@@ -39,10 +39,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/css/fontawesome.min.css",
-              "src/css/light.min.css",
-              "src/css/brands.min.css"
+              "src/styles.scss"
             ],
             "scripts": [
             ]
