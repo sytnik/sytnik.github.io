@@ -1,4 +1,5 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {DOCUMENT} from '@angular/common';
+import {Component, Inject, OnDestroy, OnInit, Renderer2} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 
@@ -16,7 +17,11 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
   toggleNavbar() {
     this.isOpen = !this.isOpen;
   }
-  constructor(private router: Router) {
+
+  constructor(
+    private router: Router,
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document) {
   }
 
   ngOnInit() {
@@ -27,11 +32,21 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
     });
   }
 
-  goToPage(route: string  ) {
+  goToPage(route: string) {
     this.router.navigate([route]);
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  toggleTheme() {
+    const body = this.document.body;
+    const currentTheme = body.getAttribute('data-bs-theme') === 'light' ? 'light' : 'dark';
+    this.renderer.setAttribute(body, 'data-bs-theme', currentTheme === 'light' ? 'dark' : 'light');
+  }
+
+  isLightTheme(): boolean {
+    return this.document.body.getAttribute('data-bs-theme') === 'light';
   }
 }

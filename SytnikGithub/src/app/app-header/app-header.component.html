@@ -1,4 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg sticky-top"
+     [class.navbar-light]="isLightTheme()"
+     [class.bg-light]="isLightTheme()"
+     [class.navbar-dark]="!isLightTheme()"
+     [class.bg-dark]="!isLightTheme()">
   <div class="container">
     <a class="navbar-brand" (click)="goToPage('')"
        [class.active]="activePage === '/'">
@@ -38,6 +42,15 @@
           <a class="nav-link" (click)="goToPage('certifications')"
              [class.active]="activePage === '/certifications'">
             <i class="fal fa-file-certificate me-2"></i>Certifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             (click)="toggleTheme()">
+            <i class="fal fa-lg me-0"
+               [class.fa-moon-stars]="isLightTheme()"
+               [class.fa-sun]="!isLightTheme()"></i>
+            Toggle {{ isLightTheme() ? "dark" : "light" }} theme
+          </a>
         </li>
       </ul>
     </div>

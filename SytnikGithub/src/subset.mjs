@@ -23,7 +23,9 @@ fontawesomeSubset(
       "bullseye-pointer",
       "people-group",
       "globe",
-      "u"
+      "u",
+      "sun",
+      "moon-stars"
     ]
   },
   "src/assets",
