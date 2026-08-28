@@ -1,82 +1,86 @@
-<nav class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+<nav class="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       
       <!-- Brand -->
-      <div class="flex-shrink-0">
+      <div class="flex-shrink-0 z-50 relative">
         <a routerLink="/" routerLinkActive="text-blue-600 dark:text-blue-400 font-semibold" [routerLinkActiveOptions]="{exact: true}" (click)="closeNavbar()" 
-           class="flex items-center text-lg font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-          <i class="fal fa-stream mr-2"></i>Summary
+           class="flex items-center text-lg font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer">
+          <i class="fal fa-address-card mr-2 text-xl"></i> Summary
         </a>
       </div>
       
       <!-- Desktop Menu -->
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-center space-x-6">
-          <a routerLink="/experience" routerLinkActive="text-blue-600 dark:text-blue-400 font-semibold" (click)="closeNavbar()"
-             class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer flex items-center text-sm">
-            <i class="fal fa-business-time mr-2"></i>Experience
-          </a>
-          <a routerLink="/technical" routerLinkActive="text-blue-600 dark:text-blue-400 font-semibold" (click)="closeNavbar()"
-             class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer flex items-center text-sm">
-            <i class="fal fa-code mr-2"></i>Hard skills
-          </a>
-          <a routerLink="/soft" routerLinkActive="text-blue-600 dark:text-blue-400 font-semibold" (click)="closeNavbar()"
-             class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer flex items-center text-sm">
-            <i class="fal fa-users mr-2"></i>Soft skills
-          </a>
-          <a routerLink="/certifications" routerLinkActive="text-blue-600 dark:text-blue-400 font-semibold" (click)="closeNavbar()"
-             class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer flex items-center text-sm">
-            <i class="fal fa-file-certificate mr-2"></i>Certifications
-          </a>
-          
-          <button (click)="toggleTheme()" 
-                  class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none">
-            <i class="fal fa-lg"
-               [class.fa-moon-stars]="isLightTheme()"
-               [class.fa-sun]="!isLightTheme()"></i>
-          </button>
-        </div>
+      <div class="hidden md:flex ml-10 items-center space-x-6">
+        <a routerLink="/experience" routerLinkActive="text-blue-600 dark:text-blue-400 font-semibold" (click)="closeNavbar()"
+           class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer flex items-center text-sm">
+          <i class="fal fa-business-time mr-2"></i>Experience
+        </a>
+        <a routerLink="/technical" routerLinkActive="text-blue-600 dark:text-blue-400 font-semibold" (click)="closeNavbar()"
+           class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer flex items-center text-sm">
+          <i class="fal fa-code mr-2"></i>Hard skills
+        </a>
+        <a routerLink="/soft" routerLinkActive="text-blue-600 dark:text-blue-400 font-semibold" (click)="closeNavbar()"
+           class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer flex items-center text-sm">
+          <i class="fal fa-users mr-2"></i>Soft skills
+        </a>
+        <a routerLink="/certifications" routerLinkActive="text-blue-600 dark:text-blue-400 font-semibold" (click)="closeNavbar()"
+           class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer flex items-center text-sm">
+          <i class="fal fa-file-certificate mr-2"></i>Certifications
+        </a>
+        
+        <button (click)="toggleTheme()" 
+                class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none">
+          <i class="fal fa-lg"
+             [class.fa-moon-stars]="isLightTheme()"
+             [class.fa-sun]="!isLightTheme()"></i>
+        </button>
       </div>
       
-      <!-- Mobile menu button -->
-      <div class="md:hidden flex items-center">
+      <!-- Mobile menu buttons -->
+      <div class="md:hidden flex items-center space-x-1 z-50 relative">
         <button (click)="toggleTheme()" 
-                class="mr-4 p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none">
+                class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none cursor-pointer">
           <i class="fal fa-lg"
              [class.fa-moon-stars]="isLightTheme()"
              [class.fa-sun]="!isLightTheme()"></i>
         </button>
         <button (click)="toggleNavbar()" type="button" 
-                class="inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:text-slate-900 dark:hover:text-white focus:outline-none">
+                class="inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none cursor-pointer">
           @if (!isOpen) {
-            <i class="fal fa-bars fa-lg"></i>
+            <!-- SVG Hamburger Icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
           } @else {
-            <i class="fal fa-times fa-lg"></i>
+            <!-- SVG Close Icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
           }
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile Menu Dropdown -->
   @if (isOpen) {
-    <div class="md:hidden border-t border-slate-200 dark:border-slate-800">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-slate-900">
+    <div class="md:hidden absolute top-16 left-0 w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-xl z-40">
+      <div class="px-4 py-3 space-y-2">
         <a routerLink="/experience" routerLinkActive="bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400" (click)="closeNavbar()"
-           class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors flex items-center">
+           class="block px-3 py-3 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors">
           <i class="fal fa-business-time mr-3 w-5 text-center"></i>Experience
         </a>
         <a routerLink="/technical" routerLinkActive="bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400" (click)="closeNavbar()"
-           class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors flex items-center">
+           class="block px-3 py-3 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors">
           <i class="fal fa-code mr-3 w-5 text-center"></i>Hard skills
         </a>
         <a routerLink="/soft" routerLinkActive="bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400" (click)="closeNavbar()"
-           class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors flex items-center">
+           class="block px-3 py-3 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors">
           <i class="fal fa-users mr-3 w-5 text-center"></i>Soft skills
         </a>
         <a routerLink="/certifications" routerLinkActive="bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400" (click)="closeNavbar()"
-           class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors flex items-center">
+           class="block px-3 py-3 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors">
           <i class="fal fa-file-certificate mr-3 w-5 text-center"></i>Certifications
         </a>
       </div>

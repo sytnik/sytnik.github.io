@@ -1,10 +1,11 @@
 import {Component, Inject, Renderer2, DOCUMENT} from '@angular/core';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import {CommonModule} from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './app-header.component.html',
   styleUrl: './app-header.component.css'
 })
@@ -18,6 +19,7 @@ export class AppHeaderComponent {
 
   toggleNavbar() {
     this.isOpen = !this.isOpen;
+    console.log('Menu toggled. isOpen:', this.isOpen);
   }
 
   closeNavbar() {
