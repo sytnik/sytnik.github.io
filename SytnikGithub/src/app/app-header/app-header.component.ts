@@ -11,7 +11,7 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
 })
 export class AppHeaderComponent {
   isOpen = false;
-
+  
   constructor(
     private renderer: Renderer2,
     @Inject(DOCUMENT) private document: Document) {
@@ -26,12 +26,17 @@ export class AppHeaderComponent {
   }
 
   toggleTheme() {
-    const body = this.document.body;
-    const currentTheme = body.getAttribute('data-bs-theme') === 'light' ? 'light' : 'dark';
-    this.renderer.setAttribute(body, 'data-bs-theme', currentTheme === 'light' ? 'dark' : 'light');
+    const htmlElement = this.document.documentElement;
+    if (htmlElement.classList.contains('dark')) {
+      this.renderer.removeClass(htmlElement, 'dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      this.renderer.addClass(htmlElement, 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
   }
 
   isLightTheme(): boolean {
-    return this.document.body.getAttribute('data-bs-theme') === 'light';
+    return !this.document.documentElement.classList.contains('dark');
   }
 }
