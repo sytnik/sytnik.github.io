@@ -1,9 +1,10 @@
 
-import {Component, Inject, DOCUMENT} from '@angular/core';
+import {Component, Inject, DOCUMENT, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   standalone: true,
   selector: 'app-technical',
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: './technical.component.html'
 })
 export class TechnicalComponent {

@@ -1,5 +1,5 @@
 
-import {Component, Inject, OnDestroy, OnInit, Renderer2, DOCUMENT} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit, Renderer2, DOCUMENT, ChangeDetectionStrategy} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 
@@ -7,6 +7,7 @@ import {Subscription} from 'rxjs';
   standalone: true,
   selector: 'app-header',
   templateUrl: './app-header.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app-header.component.css'
 })
 export class AppHeaderComponent implements OnInit, OnDestroy {
