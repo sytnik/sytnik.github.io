@@ -28,6 +28,12 @@ export const routes: Routes = [
     data: {animation: 'experience'}
   },
   {
+    path: 'scientific',
+    loadComponent: () => import('./scientific/scientific.component')
+      .then(component => component.ScientificComponent),
+    data: {animation: 'scientific'}
+  },
+  {
     path: '404',
     loadComponent: () => import('./not-found/not-found.component')
       .then(component => component.NotFoundComponent),
