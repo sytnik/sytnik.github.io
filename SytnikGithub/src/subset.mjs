@@ -1,4 +1,4 @@
-﻿import {fontawesomeSubset} from "fontawesome-subset";
+import {fontawesomeSubset} from "fontawesome-subset";
 
 fontawesomeSubset(
   {
