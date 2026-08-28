@@ -60,24 +60,26 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div class="md:hidden border-t border-slate-200 dark:border-slate-800" [class.block]="isOpen" [class.hidden]="!isOpen">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-slate-900">
-      <a routerLink="/experience" routerLinkActive="bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400" (click)="closeNavbar()"
-         class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors flex items-center">
-        <i class="fal fa-business-time mr-3 w-5 text-center"></i>Experience
-      </a>
-      <a routerLink="/technical" routerLinkActive="bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400" (click)="closeNavbar()"
-         class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors flex items-center">
-        <i class="fal fa-code mr-3 w-5 text-center"></i>Hard skills
-      </a>
-      <a routerLink="/soft" routerLinkActive="bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400" (click)="closeNavbar()"
-         class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors flex items-center">
-        <i class="fal fa-users mr-3 w-5 text-center"></i>Soft skills
-      </a>
-      <a routerLink="/certifications" routerLinkActive="bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400" (click)="closeNavbar()"
-         class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors flex items-center">
-        <i class="fal fa-file-certificate mr-3 w-5 text-center"></i>Certifications
-      </a>
+  @if (isOpen) {
+    <div class="md:hidden border-t border-slate-200 dark:border-slate-800">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-slate-900">
+        <a routerLink="/experience" routerLinkActive="bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400" (click)="closeNavbar()"
+           class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors flex items-center">
+          <i class="fal fa-business-time mr-3 w-5 text-center"></i>Experience
+        </a>
+        <a routerLink="/technical" routerLinkActive="bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400" (click)="closeNavbar()"
+           class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors flex items-center">
+          <i class="fal fa-code mr-3 w-5 text-center"></i>Hard skills
+        </a>
+        <a routerLink="/soft" routerLinkActive="bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400" (click)="closeNavbar()"
+           class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors flex items-center">
+          <i class="fal fa-users mr-3 w-5 text-center"></i>Soft skills
+        </a>
+        <a routerLink="/certifications" routerLinkActive="bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400" (click)="closeNavbar()"
+           class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-50 dark:hover:text-white dark:hover:bg-slate-800 transition-colors flex items-center">
+          <i class="fal fa-file-certificate mr-3 w-5 text-center"></i>Certifications
+        </a>
+      </div>
     </div>
-  </div>
+  }
 </nav>

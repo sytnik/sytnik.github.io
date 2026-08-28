@@ -1,4 +1,4 @@
-import {Component, Inject, Renderer2, DOCUMENT, ChangeDetectionStrategy} from '@angular/core';
+import {Component, Inject, Renderer2, DOCUMENT} from '@angular/core';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
@@ -6,7 +6,6 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
   selector: 'app-header',
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './app-header.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app-header.component.css'
 })
 export class AppHeaderComponent {
