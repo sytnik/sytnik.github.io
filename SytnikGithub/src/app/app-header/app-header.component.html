@@ -1,11 +1,10 @@
-<nav class="navbar navbar-expand-lg sticky-top"
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm"
      [class.navbar-light]="isLightTheme()"
      [class.bg-light]="isLightTheme()"
      [class.navbar-dark]="!isLightTheme()"
      [class.bg-dark]="!isLightTheme()">
   <div class="container">
-    <a class="navbar-brand" (click)="goToPage('')"
-       [class.active]="activePage === '/'">
+    <a class="navbar-brand" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeNavbar()">
       <i class="fal fa-stream me-2"></i>Summary
     </a>
     <button class="navbar-toggler"
@@ -21,31 +20,28 @@
          id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" (click)="goToPage('experience')"
-             [class.active]="activePage === '/experience'">
+          <a class="nav-link" routerLink="/experience" routerLinkActive="active" (click)="closeNavbar()">
             <i class="fal fa-business-time me-2"></i>Experience
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="goToPage('technical')"
-             [class.active]="activePage === '/technical'">
+          <a class="nav-link" routerLink="/technical" routerLinkActive="active" (click)="closeNavbar()">
             <i class="fal fa-code me-2"></i>Hard skills
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="goToPage('soft')"
-             [class.active]="activePage === '/soft'">
+          <a class="nav-link" routerLink="/soft" routerLinkActive="active" (click)="closeNavbar()">
             <i class="fal fa-users me-2"></i>Soft skills
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="goToPage('certifications')"
-             [class.active]="activePage === '/certifications'">
-            <i class="fal fa-file-certificate me-2"></i>Certifications</a>
+          <a class="nav-link" routerLink="/certifications" routerLinkActive="active" (click)="closeNavbar()">
+            <i class="fal fa-file-certificate me-2"></i>Certifications
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"
-             (click)="toggleTheme()">
+          <a class="nav-link" style="cursor: pointer;"
+             (click)="toggleTheme(); closeNavbar()">
             <i class="fal fa-lg me-0"
                [class.fa-moon-stars]="isLightTheme()"
                [class.fa-sun]="!isLightTheme()"></i>

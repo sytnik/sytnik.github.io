@@ -45,6 +45,16 @@
 
 $color-start: #a8c0ff;
 $color-end: #3f2b96;
+
+$dark-color-start: #0f0c29;
+$dark-color-mid: #302b63;
+$dark-color-end: #24243e;
+
 body {
   background: linear-gradient(to right, $color-start 0%, $color-end 100%);
+  min-height: 100vh;
+}
+
+[data-bs-theme="dark"] body {
+  background: linear-gradient(to right, $dark-color-start 0%, $dark-color-mid 50%, $dark-color-end 100%);
 }

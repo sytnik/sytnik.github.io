@@ -1,44 +1,28 @@
-
-import {Component, Inject, OnDestroy, OnInit, Renderer2, DOCUMENT, ChangeDetectionStrategy} from '@angular/core';
-import {NavigationEnd, Router} from '@angular/router';
-import {Subscription} from 'rxjs';
+import {Component, Inject, Renderer2, DOCUMENT, ChangeDetectionStrategy} from '@angular/core';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-header',
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './app-header.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app-header.component.css'
 })
-export class AppHeaderComponent implements OnInit, OnDestroy {
-  activePage = '';
-  subscription: Subscription = new Subscription();
+export class AppHeaderComponent {
   isOpen = false;
+
+  constructor(
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document) {
+  }
 
   toggleNavbar() {
     this.isOpen = !this.isOpen;
   }
 
-  constructor(
-    private router: Router,
-    private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document) {
-  }
-
-  ngOnInit() {
-    this.subscription = this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.activePage = event.urlAfterRedirects;
-      }
-    });
-  }
-
-  goToPage(route: string) {
-    this.router.navigate([route]);
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+  closeNavbar() {
+    this.isOpen = false;
   }
 
   toggleTheme() {
